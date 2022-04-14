@@ -32,42 +32,7 @@ def fix_date_time(date):
         time = timeTemp[0] + ":" + timeTemp[1] 
         return year + " " + time
     return date
-# check whether eddyCov database exists or not
-def check_dynamodb_table_exists():
-    dynamoDB = boto3.client('dynamodb')
-    
-    # show list of all tables in dynamoDB
-    table_list = dynamoDB.list_tables()['TableNames']
-    if tableName in table_list:
-        print('This table already exists!')
-    else:
-        # create a dynamoDB table 
-        table = dynamoDB.create_table(
-            TableName=tableName, 
-            KeySchema=[
-                {
-                    'AttributeName': 'station',
-                    'KeyType': 'HASH' # Partition key
-                },
-                {
-                    'AttributeName': 'dateTime', 
-                    'KeyType': 'RANGE' # Sort key
-                }
-            ],
-            AttributeDefinitions=[
-                {
-                    'AttributeName': 'station',
-                    'AttributeType': 'S' # S = String 
-                }, 
-                {
-                    'AttributeName': 'dateTime',
-                    'AttributeType': 'S'
-                }
-            ], BillingMode='PAY_PER_REQUEST'
-            )
-        print('Table is created!')
-        time.sleep(20)
-        print(dynamoDB.list_tables()['TableNames'])
+
 
 # check whether this row stored or not (dateTime)
 def check_datetime_stored(columnsName, row, _fileName):
@@ -207,23 +172,20 @@ def delete_file(fileName, bucketName):
 
 # start
 # check dataset exists or not
-check_dynamodb_table_exists()
-    
-# show all files inside the bucket
-for bucket_object in s3.list_objects(Bucket=bucketName)['Contents']:
-    fileName = bucket_object['Key']
-    # sort_files_based_on_time()
-    # get file object
-    obj = s3.get_object(Bucket=bucketName, Key=fileName) 
-    # read file using pandas
-    try:
-        df = pd.read_csv(obj['Body']) 
-    except:
-        sns = boto3.client('sns')
-        response = sns.publish(
+
+fileName = "eddypro_muka_head01_biomet_2018-12-14T000001_exp.csv"
+# get file object
+obj = s3.get_object(Bucket=bucketName, Key=fileName) 
+# read file using pandas
+try:
+    df = pd.read_csv(obj['Body'])
+except:
+    sns = boto3.client('sns')
+    response = sns.publish(
         TopicArn='arn:aws:sns:us-east-1:484024138755:atmosfera_dynamodb',
         Message= fileName + ' is corrupted!',
         Subject= 'Lambda error!'
-    )
-    check_file(df, fileName)
-    delete_file(fileName, bucketName)
+        )
+    sys.exit(fileName + ' is corrupted!')
+check_file(df, fileName)
+delete_file(fileName, bucketName)

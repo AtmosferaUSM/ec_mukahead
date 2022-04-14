@@ -217,13 +217,14 @@ for bucket_object in s3.list_objects(Bucket=bucketName)['Contents']:
     obj = s3.get_object(Bucket=bucketName, Key=fileName) 
     # read file using pandas
     try:
-        df = pd.read_csv(obj['Body']) 
+        df = pd.read_csv(obj['Body'])
     except:
         sns = boto3.client('sns')
         response = sns.publish(
-        TopicArn='arn:aws:sns:us-east-1:484024138755:atmosfera_dynamodb',
-        Message= fileName + ' is corrupted!',
-        Subject= 'Lambda error!'
-    )
+            TopicArn='arn:aws:sns:us-east-1:484024138755:atmosfera_dynamodb',
+            Message= fileName + ' is corrupted!',
+            Subject= 'Lambda error!'
+            )
+        sys.exit(fileName + ' is corrupted!')
     check_file(df, fileName)
     delete_file(fileName, bucketName)
