@@ -10,6 +10,7 @@ tableName = 'ec_mukaHead'
 # Create connection to S3
 s3 = boto3.client('s3')
 bucketName = 'ec-mukahead1'
+fileName = "eddypro_muka_head01_biomet_2018-12-14T000001_exp.csv"
 
 # fix dateTime
 def fix_date_time(date):
@@ -173,7 +174,7 @@ def delete_file(fileName, bucketName):
 # start
 # check dataset exists or not
 
-fileName = "eddypro_muka_head01_biomet_2018-12-14T000001_exp.csv"
+
 # get file object
 obj = s3.get_object(Bucket=bucketName, Key=fileName) 
 # read file using pandas
@@ -182,7 +183,7 @@ try:
 except:
     sns = boto3.client('sns')
     response = sns.publish(
-        TopicArn='arn:aws:sns:us-east-1:484024138755:atmosfera_dynamodb',
+        TopicArn='arn:aws:sns:us-west-2:825107063935:ec_mukahead_dynamodb:0fc9eaa1-10b4-42cd-9ecf-156166250d15',
         Message= fileName + ' is corrupted!',
         Subject= 'Lambda error!'
         )
