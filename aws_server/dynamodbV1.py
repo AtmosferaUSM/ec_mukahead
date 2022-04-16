@@ -130,7 +130,7 @@ def check_datetime_stored(columnsName, row, _fileName):
                 fixedDictOrder # update full_output values in dict
                 )
         
-        print('Data has been updated successfully!')
+        # print('Data has been updated successfully!')
     
     else:
         if _fileName == 'biomet':
@@ -147,13 +147,13 @@ def check_datetime_stored(columnsName, row, _fileName):
                 'dateTime': dateTimeValue,
                 'full_output': temp
             })
-        print('Data has been stored successfully!')
+        # print('Data has been stored successfully!')
     
 # check the find name
 def check_file(df, fileName):
     print(fileName)
     if '_biomet_' in fileName:
-        print('It is a biomet file')
+        # print('It is a biomet file')
         df.drop(0, inplace=True) # drop first row in biomet file (symbols)
         df.reset_index(drop=True, inplace=True) # reset index
         df["dateTime"] = df["date"] + " " + df["time"] # combine date and time columns
@@ -167,7 +167,7 @@ def check_file(df, fileName):
             
         
     elif '_full_output_' in fileName:
-        print('It is a full output file')
+        # print('It is a full output file')
         df.drop(df.columns[-1], axis=1, inplace=True) # NaN last column! needs to be removed
         columnsNameHeader = list(df)
         df.columns=df. iloc[0]
@@ -221,7 +221,7 @@ for bucket_object in s3.list_objects(Bucket=bucketName)['Contents']:
     except:
         sns = boto3.client('sns')
         response = sns.publish(
-            TopicArn='arn:aws:sns:us-west-2:825107063935:ec_mukahead_dynamodb:0fc9eaa1-10b4-42cd-9ecf-156166250d15',
+            TopicArn='arn:aws:sns:us-west-2:825107063935:ec_mukahead_sns',
             Message= fileName + ' is corrupted!',
             Subject= 'Lambda error!'
             )
