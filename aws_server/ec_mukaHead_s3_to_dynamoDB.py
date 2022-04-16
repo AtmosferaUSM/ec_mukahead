@@ -3,6 +3,8 @@ import pandas as pd
 import boto3
 import sys
 import time
+import numpy as np
+
 
 tableName = 'ec_mukaHead'
 
@@ -73,7 +75,10 @@ def check_datetime_stored(columnsName, row, _fileName):
     dynamoDB = boto3.resource('dynamodb') # connect to dynamodb
     table = dynamoDB.Table(tableName) # connect to eddyCov table
     
-        
+    # replace the nan values inside an array with -9999 
+    row = ['-9999' if x is np.nan else x for x in row]
+    # convert all elements of list to int python
+    row = [ str(x) for x in row ]
     # fix dateTime and check whether the dateTime exists inside the dataset or not
     dateTimeValue = fix_date_time(row[-1])
     res = table.get_item(Key={'station': 'mukahead', 'dateTime': dateTimeValue}) 
@@ -101,7 +106,6 @@ def check_datetime_stored(columnsName, row, _fileName):
                 lasHeaderName = columnsName[i][0] 
                 temp.update({columnsName[i][0]: {columnsName[i][1] : row[i]}})
     
-    
     if 'Item' in res:
         #print('res -> ', res['Item'])
         #print('temp -> ', temp)
@@ -127,7 +131,7 @@ def check_datetime_stored(columnsName, row, _fileName):
                 fixedDictOrder # update full_output values in dict
                 )
         
-        print('Data has been updated successfully!')
+        # print('Data has been updated successfully!')
     
     else:
         if _fileName == 'biomet':
@@ -144,13 +148,13 @@ def check_datetime_stored(columnsName, row, _fileName):
                 'dateTime': dateTimeValue,
                 'full_output': temp
             })
-        print('Data has been stored successfully!')
+        # print('Data has been stored successfully!')
     
 # check the find name
 def check_file(df, fileName):
     print(fileName)
     if '_biomet_' in fileName:
-        print('It is a biomet file')
+        # print('It is a biomet file')
         df.drop(0, inplace=True) # drop first row in biomet file (symbols)
         df.reset_index(drop=True, inplace=True) # reset index
         df["dateTime"] = df["date"] + " " + df["time"] # combine date and time columns
@@ -164,7 +168,7 @@ def check_file(df, fileName):
             
         
     elif '_full_output_' in fileName:
-        print('It is a full output file')
+        # print('It is a full output file')
         df.drop(df.columns[-1], axis=1, inplace=True) # NaN last column! needs to be removed
         columnsNameHeader = list(df)
         df.columns=df. iloc[0]
@@ -207,14 +211,27 @@ def delete_file(fileName, bucketName):
 def lambda_handler(event, context):
     check_dynamodb_table_exists()
     
+    if 'Contents' not in s3.list_objects(Bucket=bucketName).keys():
+        return {
+        'statusCode': 200,
+        'body': 'S3 is empty!'
+    }
     # show all files inside the bucket
     for bucket_object in s3.list_objects(Bucket=bucketName)['Contents']:
         fileName = bucket_object['Key']
-        # sort_files_based_on_time()
         # get file object
         obj = s3.get_object(Bucket=bucketName, Key=fileName) 
         # read file using pandas
-        df = pd.read_csv(obj['Body']) 
+        try:
+            df = pd.read_csv(obj['Body'])
+        except:
+            sns = boto3.client('sns')
+            response = sns.publish(
+                TopicArn='arn:aws:sns:us-west-2:825107063935:ec_mukahead_sns',
+                Message= fileName + ' is corrupted!',
+                Subject= 'Lambda error!'
+                )
+            sys.exit(fileName + ' is corrupted!')
         check_file(df, fileName)
         delete_file(fileName, bucketName)
     

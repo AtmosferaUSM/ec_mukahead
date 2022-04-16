@@ -212,7 +212,6 @@ check_dynamodb_table_exists()
 # show all files inside the bucket
 for bucket_object in s3.list_objects(Bucket=bucketName)['Contents']:
     fileName = bucket_object['Key']
-    # sort_files_based_on_time()
     # get file object
     obj = s3.get_object(Bucket=bucketName, Key=fileName) 
     # read file using pandas
