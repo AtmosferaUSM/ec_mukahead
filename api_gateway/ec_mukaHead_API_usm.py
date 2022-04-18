@@ -5,7 +5,7 @@ from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key
 
 def lambda_handler(event, context):
-    symbol={
+    unit={
         "full_output": {
                 "storage_fluxes": {
                     "H_strg": "W+1m-2",
@@ -200,13 +200,13 @@ def lambda_handler(event, context):
             body.append({**{'dateTime': item['dateTime']}, **{'biomet': item['full_output']}})
             
     if data == "biomet":
-        del symbol['full_output']
+        del unit['full_output']
     elif data == 'full_output':
-        del symbol['biomet']
+        del unit['biomet']
         
     # TODO implement
     return {
         'statusCode': 200,
-        'symbol': symbol,
+        'unit': unit,
         'body': body
     }

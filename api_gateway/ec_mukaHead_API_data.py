@@ -1,3 +1,22 @@
+'''
+- Temperature (category)
+TA (atmospheric temperature), TS ( water temperature)
+
+- Radiation (category)
+RN (net radiation), RG (global radiation), PPFD(photosynthetic photon flux density) 
+
+- Water cycle (category)
+RH(relative humidity), P-Rain (precipitation), LE ( latent heat), qc_LE(do not show), H2O mixing ratio, H (sensible heat flux), Bowen ratio
+
+- Carbon Cycle (category)
+CO2 Flux, qc_co2_flux(do not show), CO2 mixing ratio
+
+- Turbulence (category)
+Wind speed, wind direction, Air pressure 
+
+
+'''
+
 # Give Lambda Function Access to the DynamoDB Table
 import json
 import boto3
@@ -71,7 +90,7 @@ def lambda_handler(event, context):
                     turbulence.update({'air pressure': item['full_output']['air_properties']['air_pressure']})
                     
             data = {**{'dateTime': dateTime}, **{'Temperature': temperature}, **{'Radiation': radiation}, **{'Water Cycle': water_cycle}, **{'Carbon Cycle': carbon_cycle}, **{'Turbulence': turbulence}}
-            symbol={
+            unit={
                 'dateTime': 'yyyy-mm-dd HH:MM',
                 'Temperature': { 
                     'TA': 'K',
@@ -105,23 +124,23 @@ def lambda_handler(event, context):
             # delete empty dict (not selected category)
             if not len(temperature):
                 del data['Temperature']
-                del symbol['Temperature']
+                del unit['Temperature']
             if not len(radiation):
                 del data['Radiation']
-                del symbol['Radiation']
+                del unit['Radiation']
             if not len(water_cycle):
                 del data['Water Cycle']
-                del symbol['Water Cycle']
+                del unit['Water Cycle']
             if not len(carbon_cycle):
                 del data['Carbon Cycle']
-                del symbol['Carbon Cycle']
+                del unit['Carbon Cycle']
             if not len(turbulence):
                 del data['Turbulence']
-                del symbol['Turbulence']
+                del unit['Turbulence']
                 
         body.append(data)
     return {
         'statusCode': 200,
-        'symbol': symbol,
+        'unit': unit,
         'body': body
     }
