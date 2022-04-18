@@ -184,8 +184,8 @@ def lambda_handler(event, context):
             "dateTime": "yyyy-mm-dd HH:MM"
         }
     print(event)
-    start = event['params']['querystring']['start']
-    end = event['params']['querystring']['end']
+    start = event['params']['querystring']['start'] + " 00:00"
+    end = event['params']['querystring']['end'] + " 23:30"
     data = event['params']['querystring']['data']
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('ec_mukaHead')
@@ -197,7 +197,7 @@ def lambda_handler(event, context):
         elif data == 'biomet':
             body.append({**{'dateTime': item['dateTime']}, **{'biomet': item['biomet']}})
         elif data == 'fulloutput':
-            body.append({**{'dateTime': item['dateTime']}, **{'biomet': item['full_output']}})
+            body.append({**{'dateTime': item['dateTime']}, **{'full_output': item['full_output']}})
             
     if data == "biomet":
         del unit['full_output']

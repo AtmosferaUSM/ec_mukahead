@@ -1,22 +1,3 @@
-'''
-- Temperature (category)
-TA (atmospheric temperature), TS ( water temperature)
-
-- Radiation (category)
-RN (net radiation), RG (global radiation), PPFD(photosynthetic photon flux density) 
-
-- Water cycle (category)
-RH(relative humidity), P-Rain (precipitation), LE ( latent heat), qc_LE(do not show), H2O mixing ratio, H (sensible heat flux), Bowen ratio
-
-- Carbon Cycle (category)
-CO2 Flux, qc_co2_flux(do not show), CO2 mixing ratio
-
-- Turbulence (category)
-Wind speed, wind direction, Air pressure 
-
-
-'''
-
 # Give Lambda Function Access to the DynamoDB Table
 import json
 import boto3
@@ -25,8 +6,8 @@ from boto3.dynamodb.conditions import Key
 
 def lambda_handler(event, context):
     print(event)
-    start = event['params']['querystring']['start']
-    end = event['params']['querystring']['end']
+    start = event['params']['querystring']['start'] + " 00:00"
+    end = event['params']['querystring']['end'] + " 23:30"
     category = event['params']['querystring']['category']
     category = category.split('--')[:-1]
     
