@@ -4,7 +4,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/AtmosferaUSM/ec_mukahead?color=yellow&style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/AtmosferaUSM/ec_mukahead?style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AtmosferaUSM/ec_mukahead?logo=Github&style=for-the-badge)
-![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub&style=for-the-badge)
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub&style=for-the-badge&color=138)
 
 
 
