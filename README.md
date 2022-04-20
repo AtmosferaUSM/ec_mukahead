@@ -103,7 +103,7 @@ list things you need to use the software and how to install them.
 ### Installation
 
 <div align="center">
-    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/Local_to_S3.JPG" alt="Logo" width="80%" height="80%">
+    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/Local_to_S3.jpg" alt="Logo" width="80%" height="80%">
  </div>
  
  
