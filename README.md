@@ -138,7 +138,13 @@ how a project can be used, demos and more resources.
 
 See the [open issues](https://github.com/AtmosferaUSM/ec_mukahead/issues) for a full list of proposed features (and known issues).
 
+
+<blockquote>
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim
+</blockquote>
+
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 <!-- LICENSE -->
