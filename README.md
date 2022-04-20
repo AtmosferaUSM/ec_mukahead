@@ -1,8 +1,19 @@
 <!-- Badges -->
 ![GitHub](https://img.shields.io/github/license/AtmosferaUSM/ec_mukahead?label=license&logo=Github&style=flat-square)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/AtmosferaUSM/ec_mukahead/main?logo=Github)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AtmosferaUSM/ec_mukahead?logo=Github)
-![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub)
+![GitHub last commit](https://img.shields.io/github/last-commit/AtmosferaUSM/ec_mukahead?style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/AtmosferaUSM/ec_mukahead?color=yellow&style=flat-square)
+![GitHub contributors](https://img.shields.io/github/contributors/AtmosferaUSM/ec_mukahead?style=flat-square)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AtmosferaUSM/ec_mukahead?logo=Github&style=flat-square)
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub&style=flat-square)
+
+<a href="https://www.facebook.com/atmosphereInteraction" target="_blank">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="facebook">
+</a>
+
+<a href="https://www.facebook.com/atmosphereInteraction" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
+</a>
+  	
 
 <div id="top"></div>
 
@@ -50,3 +61,34 @@
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+
+Here's why:
+* -------
+* -------
+* ------- :smile:
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
+* [Python 3](https://www.python.org/)
+* [AWS S3](https://aws.amazon.com/s3/)
+* [AWS DynamoDB](https://aws.amazon.com/dynamodb/)
+* [AWS Lambda](https://aws.amazon.com/lambda/)
+* [AWS Cloud9](https://aws.amazon.com/cloud9/)
+* [AWS API Gateway](https://aws.amazon.com/api-gateway/)
+* [AWS CloudWatch](https://aws.amazon.com/cloudwatch/)
+* [AWS Cognito](https://aws.amazon.com/cognito/)
+* [AWS Identity and Access Management (IAM)](https://aws.amazon.com/iam/)
+* [Amazon Simple Notification Service](https://aws.amazon.com/sns/)
+
+
