@@ -6,6 +6,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AtmosferaUSM/ec_mukahead?logo=Github&style=flat-square)
 ![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub&style=flat-square)
 
+
 <a href="https://www.facebook.com/atmosphereInteraction" target="_blank">
     <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="facebook">
 </a>
@@ -13,10 +14,8 @@
 <a href="https://www.linkedin.com/company/atmosphere-interaction" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
 </a>
-  	
 
 <div id="top"></div>
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -160,24 +159,36 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Creators
 
-Dr. Yusri Yusup 
-* :email: yusriy@usm.my
-* :computer: https://sites.google.com/site/yusriyp
-<a href="https://www.linkedin.com/in/yusriy/" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
-</a>
+#### Dr. Yusri Yusup
+<div>
+    <a href="https://sites.google.com/site/yusriyp" target="_blank">
+        <img src="https://img.shields.io/badge/website-sites.google.com/site/yusriyp-green?style=for-the-badge&logo=appveyor" alt="website">
+    </a>
+    <a href="nailto:yusriy@usm.my" target="_blank">
+        <img src="https://img.shields.io/badge/email-yusriy@usm.my-important?style=for-the-badge" alt="email">
+    </a>
+    <a href="https://www.linkedin.com/in/yusriy/" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
+    </a>
+    <a href="https://www.youtube.com/channel/UCAGpbU_rdH7sTMUZPn9r67w" target="_blank">
+        <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube">
+    </a>
+</div>
 
-<a href="https://www.youtube.com/channel/UCAGpbU_rdH7sTMUZPn9r67w" target="_blank">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube">
-</a>
 
 
-Ehsan Jolous Jamshidi 
-* :email: ej.jamshidi@gmail.com
-* :computer: https://jamshidi.herokuapp.com/
-<a href="https://my.linkedin.com/in/ehsan-jolous-jamshidi-19a2b6146" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
-</a>
+#### Ehsan Jolous Jamshidi
+<div>
+    <a href="https://jamshidi.herokuapp.com/" target="_blank">
+        <img src="https://img.shields.io/badge/website-jamshidi.herokuapp.com-green?style=for-the-badge&logo=appveyor" alt="website">
+    </a>
+    <a href="nailto:ej.jamshidi@gmail.com" target="_blank">
+        <img src="https://img.shields.io/badge/email-ej.jamshidi@gmail.com-important?style=for-the-badge" alt="email">
+    </a>
+    <a href="https://my.linkedin.com/in/ehsan-jolous-jamshidi-19a2b6146" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
+    </a>
+</div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
