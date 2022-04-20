@@ -181,9 +181,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Creators
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Dr. Yusri Yusup 
+* :email: yusriy@usm.my
+* :computer: https://sites.google.com/site/yusriyp
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Ehsan Jolous Jamshidi 
+* :email: ej.jamshidi@gmail.com
+* :computer: https://jamshidi.herokuapp.com/
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -194,7 +198,11 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 This research is funded by the `Universiti Sains Malaysia` Research University Grant No. `1001/PTEKIND/811316` and Bridging Grant 2018 Grant No. `304.PTEKIND.6316289`.
       
-Some of the sensors used are contributed by `Elite Scientific Instruments` Sdn Bhd. A-LG-03, Block A, Serdang Perdana Selatan, Section 1, 43300 Seri Kembangan, Selangor Darul Ehsan, Malaysia `Tel.: +603 89456100; +603 89454613 (Office)` | `Fax.:+603 8945 7100` | `E-mail: sales@esi.com.my`
+Some of the sensors used are contributed by `Elite Scientific Instruments` <br />
+:office: Sdn Bhd. A-LG-03, Block A, Serdang Perdana Selatan, Section 1, 43300 Seri Kembangan, Selangor Darul Ehsan, Malaysia <br />
+:phone: +603 89456100; +603 89454613 (Office) <br />
+:fax:  +603 8945 7100 <br />
+:email: sales@esi.com.my <br />
 
 
 
@@ -207,5 +215,4 @@ Some of the sensors used are contributed by `Elite Scientific Instruments` Sdn B
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[1]: <https://en.wikipedia.org/wiki/Hobbit#Lifestyle> "Hobbit lifestyles"
 
