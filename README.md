@@ -3,7 +3,7 @@ The codes for the transfer of eddy covariance data for the Muka Head station.
 
 <div id="top"></div>
 [![Contributors][contributors-shield]][https://github.com/yusriy]
-[![MIT License][license-shield]][license-url]
+![GitHub](https://img.shields.io/github/license/AtmosferaUSM/ec_mukahead?label=license)
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
