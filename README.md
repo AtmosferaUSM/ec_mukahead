@@ -12,22 +12,16 @@ The codes for the transfer of eddy covariance data for the Muka Head station.
 <br />
 <div align="center">
   <a href="https://atmosfera.usm.my/index.html">
-    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/logo.png" alt="Logo" width="400" height="75">
+    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/logo_bg_white.png" alt="Logo" width="400" height="75">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">project_title</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    project_description
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://atmosfera.usm.my/index.html"><strong>Explore the website »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
 </div>
 
