@@ -10,6 +10,8 @@
 
 
 <div id="top"></div>
+
+<div id="top"></div>
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -99,6 +101,12 @@ list things you need to use the software and how to install them.
   ```
 
 ### Installation
+
+<div align="center">
+    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/Local_to_S3.JPG" alt="Logo" width="80%" height="80%">
+ </div>
+ 
+ 
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
