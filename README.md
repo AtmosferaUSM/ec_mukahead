@@ -1,19 +1,13 @@
 <!-- Badges -->
-![GitHub](https://img.shields.io/github/license/AtmosferaUSM/ec_mukahead?label=license&logo=Github&style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/AtmosferaUSM/ec_mukahead?style=flat-square)
-![GitHub top language](https://img.shields.io/github/languages/top/AtmosferaUSM/ec_mukahead?color=yellow&style=flat-square)
-![GitHub contributors](https://img.shields.io/github/contributors/AtmosferaUSM/ec_mukahead?style=flat-square)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AtmosferaUSM/ec_mukahead?logo=Github&style=flat-square)
-![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub&style=flat-square)
+![GitHub](https://img.shields.io/github/license/AtmosferaUSM/ec_mukahead?label=license&logo=Github&style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/AtmosferaUSM/ec_mukahead?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/AtmosferaUSM/ec_mukahead?color=yellow&style=for-the-badge)
+![GitHub contributors](https://img.shields.io/github/contributors/AtmosferaUSM/ec_mukahead?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AtmosferaUSM/ec_mukahead?logo=Github&style=for-the-badge)
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub&style=for-the-badge)
 
 
-<a href="https://www.facebook.com/atmosphereInteraction" target="_blank">
-    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="facebook">
-</a>
 
-<a href="https://www.linkedin.com/company/atmosphere-interaction" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
-</a>
 
 <div id="top"></div>
 <!-- PROJECT LOGO -->
@@ -190,8 +184,19 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
     </a>
 </div>
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
+#### Atmosfera Website Social Media
+<div>
+<a href="https://www.facebook.com/atmosphereInteraction" target="_blank">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="facebook">
+</a>
+
+<a href="https://www.linkedin.com/company/atmosphere-interaction" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
+</a> 
+</div>
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- ACKNOWLEDGMENTS -->
