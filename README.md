@@ -2,7 +2,7 @@
 ![GitHub](https://img.shields.io/github/license/AtmosferaUSM/ec_mukahead?label=license&logo=Github&style=flat-square)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/AtmosferaUSM/ec_mukahead/main?logo=Github)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AtmosferaUSM/ec_mukahead?logo=Github)
-![Custom badge](https://img.shields.io/endpoint?color=informational&url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub)
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fsn7hcohj4l.execute-api.us-west-2.amazonaws.com%2Fv1%2Fgithub)
 
 <div id="top"></div>
 
