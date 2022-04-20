@@ -12,7 +12,7 @@ The codes for the transfer of eddy covariance data for the Muka Head station.
 <br />
 <div align="center">
   <a href="https://atmosfera.usm.my/index.html">
-    <img src="https://atmosfera.usm.my/images/logo.png" alt="Logo" width="400" height="75">
+    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/logo.png" alt="Logo" width="400" height="75">
   </a>
 
   <h3 align="center">Best-README-Template</h3>
