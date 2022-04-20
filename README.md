@@ -106,13 +106,13 @@ list things you need to use the software and how to install them.
     <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/Local_to_S3.jpg" alt="Logo" width="80%" height="80%">
  </div>
  <div align="center">
-    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/s3_to_dynamodb_lambda.jpg" alt="Logo" width="80%" height="80%">
+    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/s3_to_dynamodb_lambda.JPG" alt="Logo" width="80%" height="80%">
  </div>
  <div align="center">
-    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/s3_to_dynamodb_cloud9.jpg" alt="Logo" width="80%" height="80%">
+    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/s3_to_dynamodb_cloud9.JPG" alt="Logo" width="80%" height="80%">
  </div>
  <div align="center">
-    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/api.jpg" alt="Logo" width="80%" height="80%">
+    <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/api.JPG" alt="Logo" width="80%" height="80%">
  </div>
  
  
