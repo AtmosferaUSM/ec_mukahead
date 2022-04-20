@@ -163,10 +163,21 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Dr. Yusri Yusup 
 * :email: yusriy@usm.my
 * :computer: https://sites.google.com/site/yusriyp
+<a href="https://www.linkedin.com/in/yusriy/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
+</a>
+
+<a href="https://www.youtube.com/channel/UCAGpbU_rdH7sTMUZPn9r67w" target="_blank">
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="youtube">
+</a>
+
 
 Ehsan Jolous Jamshidi 
 * :email: ej.jamshidi@gmail.com
 * :computer: https://jamshidi.herokuapp.com/
+<a href="https://my.linkedin.com/in/ehsan-jolous-jamshidi-19a2b6146" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="linkeddin">
+</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
