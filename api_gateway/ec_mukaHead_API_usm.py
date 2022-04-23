@@ -5,6 +5,21 @@ from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key
 
 def lambda_handler(event, context):
+    cite = {
+        "DOI": "https://doi.org/10.6084/m9.figshare.19613889.v1",
+        "email": "yusriy@usm.my",
+        "citation": "Yusup, Yusri; Jolous Jamshidi, Ehsan (2022): Atmosfera USM Muka Head Dataset. figshare. Dataset. https://doi.org/10.6084/m9.figshare.19613889.v1" 
+        }
+        
+    station = { 
+        "name": "Muka Head Station",
+        "location": {
+            "latitude": "5.468040",
+            "longitude": "100.200258",
+            "ASL": "4m"
+        }
+    }
+
     unit={
         "full_output": {
                 "storage_fluxes": {
@@ -190,8 +205,14 @@ def lambda_handler(event, context):
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('ec_mukaHead')
     response = table.query(KeyConditionExpression= Key('station').eq('mukahead') & Key('dateTime').between(start, end))
+    data = response['Items']
+    while 'LastEvaluatedKey' in response:
+        response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
+        data.extend(response['Items']) 
+    
+
     body = []
-    for item in response['Items']:
+    for item in data:
         if data == 'all':
             body.append(item)
         elif data == 'biomet':
@@ -207,6 +228,8 @@ def lambda_handler(event, context):
     # TODO implement
     return {
         'statusCode': 200,
+        'cite': cite,
+        'station': station,
         'unit': unit,
         'body': body
     }

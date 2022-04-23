@@ -1,10 +1,26 @@
 # Give Lambda Function Access to the DynamoDB Table
-import json
 import boto3
 from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key
 
 def lambda_handler(event, context):
+    
+    cite = {
+        "DOI": "https://doi.org/10.6084/m9.figshare.19613889.v1",
+        "email": "yusriy@usm.my",
+        "citation": "Yusup, Yusri; Jolous Jamshidi, Ehsan (2022): Atmosfera USM Muka Head Dataset. figshare. Dataset. https://doi.org/10.6084/m9.figshare.19613889.v1" 
+    }
+        
+    station = { 
+        "name": "Muka Head Station",
+        "location": {
+            "latitude": "5.468040",
+            "longitude": "100.200258",
+            "ASL": "4m"
+        }
+        
+    }
+            
     print(event)
     start = event['params']['querystring']['start'] + " 00:00"
     end = event['params']['querystring']['end'] + " 23:30"
@@ -15,9 +31,15 @@ def lambda_handler(event, context):
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('ec_mukaHead')
     response = table.query(KeyConditionExpression= Key('station').eq('mukahead') & Key('dateTime').between(start, end))
+    
+    data = response['Items']
+    while 'LastEvaluatedKey' in response:
+        response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
+        data.extend(response['Items']) 
+        
     body = []
     temperature, radiation, water_cycle, carbon_cycle, turbulence = {}, {}, {}, {}, {}
-    for item in response['Items']:
+    for item in data:
         for cat in category:
             dateTime = item['dateTime']
             if cat == 'temperature':
@@ -81,7 +103,7 @@ def lambda_handler(event, context):
                     'RN': 'W/m^2',
                     'RG': 'W/m^2',
                     'PPFD': 'Âµmol/m^2/s'
-                },
+                    },
                 'Water Cycle': { 
                     'RH': '%',
                     'P-Rain': 'm', # should not be mm? it is 'm' in biomet file
@@ -122,6 +144,8 @@ def lambda_handler(event, context):
         body.append(data)
     return {
         'statusCode': 200,
+        'cite': cite,
+        'station': station,
         'unit': unit,
         'body': body
     }
