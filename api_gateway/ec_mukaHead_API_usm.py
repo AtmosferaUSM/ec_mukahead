@@ -199,20 +199,24 @@ def lambda_handler(event, context):
             "dateTime": "yyyy-mm-dd HH:MM"
         }
     print(event)
-    start = event['params']['querystring']['start'] + " 00:00"
-    end = event['params']['querystring']['end'] + " 23:30"
-    data = event['params']['querystring']['data']
+    
+    start = event['start'] + " 00:00"
+    end = event['end'] + " 23:30"
+    data = event['data']
+    fileName = event['fileName']
+
+    
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('ec_mukaHead')
     response = table.query(KeyConditionExpression= Key('station').eq('mukahead') & Key('dateTime').between(start, end))
-    data = response['Items']
+    dataItems = response['Items']
     while 'LastEvaluatedKey' in response:
         response = table.scan(ExclusiveStartKey=response['LastEvaluatedKey'])
-        data.extend(response['Items']) 
+        dataItems.extend(response['Items']) 
     
 
     body = []
-    for item in data:
+    for item in dataItems:
         if data == 'all':
             body.append(item)
         elif data == 'biomet':
@@ -224,12 +228,21 @@ def lambda_handler(event, context):
         del unit['full_output']
     elif data == 'full_output':
         del unit['biomet']
-        
-    # TODO implement
-    return {
-        'statusCode': 200,
+
+    
+    jsonFile = {
         'cite': cite,
         'station': station,
         'unit': unit,
         'body': body
+    }
+    
+    # create a connection to S3
+    s3 = boto3.client('s3')  
+    # upload on s3
+    s3.put_object(Bucket= "ec-mukahead-temp-data", Key= fileName + ".json", Body= (bytes(json.dumps(jsonFile).encode('UTF-8'))))
+    
+    # TODO implement
+    return {
+        'statusCode': 200
     }

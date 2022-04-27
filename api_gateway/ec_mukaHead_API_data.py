@@ -1,4 +1,5 @@
 # Give Lambda Function Access to the DynamoDB Table
+import json
 import boto3
 from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key
@@ -22,9 +23,18 @@ def lambda_handler(event, context):
     }
             
     print(event)
+    '''
     start = event['params']['querystring']['start'] + " 00:00"
     end = event['params']['querystring']['end'] + " 23:30"
     category = event['params']['querystring']['category']
+    '''
+    start = event['start'] + " 00:00"
+    end = event['end'] + " 23:30"
+    category = event['category']
+    fileName = event['fileName']
+    
+    
+    
     category = category.split('--')[:-1]
     
         
@@ -142,10 +152,20 @@ def lambda_handler(event, context):
                 del unit['Turbulence']
                 
         body.append(data)
-    return {
-        'statusCode': 200,
+    
+    jsonFile = {
         'cite': cite,
         'station': station,
         'unit': unit,
         'body': body
+    }
+    
+    # create a connection to S3
+    s3 = boto3.client('s3')  
+    # upload on s3
+    s3.put_object(Bucket= "ec-mukahead-temp-data", Key= fileName + ".json", Body= (bytes(json.dumps(jsonFile).encode('UTF-8'))))
+    
+    # TODO implement
+    return {
+        'statusCode': 200
     }

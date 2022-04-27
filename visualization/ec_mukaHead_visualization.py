@@ -118,8 +118,8 @@ def lambda_handler(event, context):
         ##### Precipitation 
         if 'P_RAIN_1_1_1' in item['biomet']['met'].keys():
             # change data type from string to float and remove some data points
-            temp = float(item['biomet']['met']['P_RAIN_1_1_1']) 
-            if (temp > 0.08)|(temp < 0) :
+            temp = float(item['biomet']['met']['P_RAIN_1_1_1']) * 1000 
+            if (temp > 0.08 * 1000)|(temp < 0) :
                 temp = None
                 
             P_RAIN_1_1_1.append(temp)
@@ -210,7 +210,7 @@ def lambda_handler(event, context):
         4 : { 
             'data': [P_RAIN_1_1_1],
             'title': ['P_RAIN'],
-            'unicode': '30-min cumulative rain (m)',
+            'unicode': '30-min cumulative rain (mm)',
             'file': 'P_RAIN_1_1_1.html',
             'color': ['#2196F3']
         },
@@ -224,7 +224,7 @@ def lambda_handler(event, context):
         6 : { 
             'data': [co2_flux],
             'title': ["CO2 Flux"],
-            'unicode': u'CO<sub>2</sub> Flux (\u00c2\u00b5mol+1s-1m-2)',
+            'unicode': u'CO<sub>2</sub> Flux (\u03BCmol m<sup>-2</sup> s<sup>-1</sup>)',
             'file': 'co2_flux.html',
             'color': ['#F06A6A']
         },
@@ -245,7 +245,7 @@ def lambda_handler(event, context):
         9 : { 
             'data': [wind_speed],
             'title': ["wind_speed"],
-            'unicode': 'Wind Speed (m s<sub>-1</sub>)',
+            'unicode': 'Wind Speed (m s<sup>-1</sup>)',
             'file': 'wind_speed.html',
             'color': ['#2196F3']
         }
@@ -324,7 +324,7 @@ def lambda_handler(event, context):
         show_date.append(month[int(val.split("-")[1])]  + " "  + val.split("-")[0])
     
     
-    df = pd.DataFrame({'wind_speed': wind_speed, 'wind_dir_compass': wind_dir_compass, 'Wind Speed (m s<sub>-1</sub>)': strength, 'date': show_date})
+    df = pd.DataFrame({'wind_speed': wind_speed, 'wind_dir_compass': wind_dir_compass, 'Wind Speed (m s<sup>-1</sup>)': strength, 'date': show_date})
     df365 = df.copy()
     incomplete_start = show_date[0]
     incomplete_end = show_date[-1]
@@ -335,18 +335,18 @@ def lambda_handler(event, context):
     
     compass = ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"]
     add_dummy=True;
-    new = pd.DataFrame(columns = ['wind_speed', 'wind_dir_compass', 'Wind Speed (m s<sub>-1</sub>)', 'date'])
+    new = pd.DataFrame(columns = ['wind_speed', 'wind_dir_compass', 'Wind Speed (m s<sup>-1</sup>)', 'date'])
     for i in range(len(df)):
         if (df['date'].iloc[i] != df['date'].iloc[i-1]):
             add_dummy=True;
         if(add_dummy):
             for data in compass:
-                new = new.append({'wind_speed' : 0, 'wind_dir_compass' : data, 'Wind Speed (m s<sub>-1</sub>)' : '0-0.5', 'date': df['date'].iloc[i]}, ignore_index = True)
+                new = new.append({'wind_speed' : 0, 'wind_dir_compass' : data, 'Wind Speed (m s<sup>-1</sup>)' : '0-0.5', 'date': df['date'].iloc[i]}, ignore_index = True)
             add_dummy=False;
-        new = new.append({'wind_speed' : df['wind_speed'].iloc[i], 'wind_dir_compass' : df['wind_dir_compass'].iloc[i], 'Wind Speed (m s<sub>-1</sub>)' : df['Wind Speed (m s<sub>-1</sub>)'].iloc[i], 'date': df['date'].iloc[i]}, ignore_index = True)
+        new = new.append({'wind_speed' : df['wind_speed'].iloc[i], 'wind_dir_compass' : df['wind_dir_compass'].iloc[i], 'Wind Speed (m s<sup>-1</sup>)' : df['Wind Speed (m s<sup>-1</sup>)'].iloc[i], 'date': df['date'].iloc[i]}, ignore_index = True)
     print("****************")
     print(new.head())
-    fig = px.bar_polar(new, r="wind_speed" ,template="none", theta="wind_dir_compass", color= 'Wind Speed (m s<sub>-1</sub>)', color_discrete_sequence= px.colors.sequential.Plasma_r, animation_frame="date")
+    fig = px.bar_polar(new, r="wind_speed" ,template="none", theta="wind_dir_compass", color= 'Wind Speed (m s<sup>-1</sup>)', color_discrete_sequence= px.colors.sequential.Plasma_r, animation_frame="date")
     fig.update_layout(
         polar=dict(radialaxis=dict(showticklabels=False, ticks='', linewidth=0)
         )
@@ -366,12 +366,12 @@ def lambda_handler(event, context):
     print(df365.head())
     dummy = pd.DataFrame({'wind_dir_compass': ["N","NNE","NE","ENE","E","ESE", "SE", "SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"],
                 'wind_speed': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-                'Wind Speed (m s<sub>-1</sub>)': ["0-0.5", "0-0.5", "0-0.5", "0-0.5","0-0.5","0-0.5", "0-0.5", "0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5"]})
+                'Wind Speed (m s<sup>-1</sup>)': ["0-0.5", "0-0.5", "0-0.5", "0-0.5","0-0.5","0-0.5", "0-0.5", "0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5","0-0.5"]})
     
     df365 = dummy.append(df365, ignore_index=True)
     
     
-    fig = px.bar_polar(df365, r="wind_speed" , template="none", theta="wind_dir_compass", color="Wind Speed (m s<sub>-1</sub>)", color_discrete_sequence= px.colors.sequential.Plasma_r)
+    fig = px.bar_polar(df365, r="wind_speed" , template="none", theta="wind_dir_compass", color="Wind Speed (m s<sup>-1</sup>)", color_discrete_sequence= px.colors.sequential.Plasma_r)
     fig.update_layout(
         polar=dict(radialaxis=dict(showticklabels=False, ticks='', linewidth=0)
         )
@@ -384,27 +384,6 @@ def lambda_handler(event, context):
     # upload on s3
     s3.upload_file("/tmp/" + file, bucket, file)
     print(df365.head())
-    
-    '''
-    fig = px.bar_polar(df365, r="wind_speed", theta="wind_dir_compass",
-                   color= "Wind Speed (m s<sub>-1</sub>)", template="none",
-                   labels={"Wind Speed (m s<sub>-1</sub>)": "Wind Speed in MPH"}, color_discrete_sequence= px.colors.sequential.Viridis_r
-                   )
-
-    fig.update_layout(width=800, height=800)
-    fig.update_layout(
-        polar=dict(radialaxis=dict(showticklabels=False, ticks='', linewidth=0)
-        )
-    )
-        
-    # save it in lambda tmp folder
-    file = 'windroseNew.html'
-    fig.write_html("/tmp/"+ file)
-        
-    # upload on s3
-    s3.upload_file("/tmp/" + file, bucket, file)
-    
-    '''
     
     
     # TODO implement
