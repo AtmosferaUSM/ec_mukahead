@@ -178,7 +178,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Creators
 
-#### Dr. Yusri Yusup
+#### Assoc. Prof. Dr. Yusri Yusup
 <div>
     <a href="https://sites.google.com/site/yusriyp" target="_blank">
         <img src="https://img.shields.io/badge/website-sites.google.com/site/yusriyp-green?style=for-the-badge&logo=appveyor" alt="website">
