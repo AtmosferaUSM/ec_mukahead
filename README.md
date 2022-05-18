@@ -19,10 +19,10 @@
     <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/white-logo.jpg" alt="Logo">
   </a>
 
-  <h3 align="center">EC Muka Head Data</h3>
+  <h3 align="center">Muka Head Station's Eddy Covariance and Biomet Data</h3>
 
   <p align="center">
-    The code for the eddy covariance and biomet data transfer from the local server to the cloud for the Muka Head station.
+    The eddy covariance and biomet data transfer code that tranfer them from the local server to the cloud for the Muka Head station.
     <br />
     <a href="https://atmosfera.usm.my/index.html" target="_blank"><strong>Explore the Atmosfera research website »</strong></a>
     <br />
