@@ -22,9 +22,9 @@
   <h3 align="center">EC Muka Head Data</h3>
 
   <p align="center">
-    The codes for the transfer of eddy covariance data for the Muka Head station.
+    The code for the eddy covariance and biomet data transfer from the local server to the cloud for the Muka Head station.
     <br />
-    <a href="https://atmosfera.usm.my/index.html" target="_blank"><strong>Explore the website »</strong></a>
+    <a href="https://atmosfera.usm.my/index.html" target="_blank"><strong>Explore the Atmosfera research website »</strong></a>
     <br />
   </p>
 </div>
@@ -61,12 +61,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+The Atmosfera research website showcases our ongoing research in atmosphere-sea and land interactions. Currently, we study the atmospheric exchanges above sea and freshwater bodies. We hope to measure the fluxes for many years to come so that we gain in-depth insights on the short-term and long-term atmospheric processes of these surfaces. We explore these interactions using theeddy covariance" method, a fast response open-path gas analyzer and anemometer system capable in measuring fluxes of moisture and carbon dioxide. To support the flux data, we measure weather parameters, such as solar radiation, temperature, relative humidity and wind so that we get a better understanding of the feedbacks and responses of the exchanges and its drivers.
 
-Here's why:
-* -------
-* -------
-* ------- :smile:
+The Github repo stores the codes we use in transferring the data on the local server to a cloud database on Amazon Web Services (AWS) servers. The data also can be downloaded using an API on the atmosfera.usm.my website.
+
+`yusriyp`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
