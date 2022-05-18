@@ -19,10 +19,10 @@
     <img src="https://github.com/AtmosferaUSM/ec_mukahead/blob/main/images/white-logo.jpg" alt="Logo">
   </a>
 
-  <h3 align="center">Muka Head Station's Eddy Covariance and Biomet Data</h3>
+  <h3 align="center">Muka Head Station's Data Transfer and API Codes on AWS</h3>
 
   <p align="center">
-    The eddy covariance and biomet data transfer code that tranfer them from the local server to the cloud for the Muka Head station.
+    The Muka Head's data transfer, storage, and API codes that move the data from the local server to the cloud.
     <br />
     <a href="https://atmosfera.usm.my/index.html" target="_blank"><strong>Explore the Atmosfera research website »</strong></a>
     <br />
@@ -59,12 +59,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+The Github repo stores instructions and codes we use in transferring the data on the local server to a cloud database on Amazon Web Services (AWS) servers. The data also can be downloaded using an API on the atmosfera.usm.my website.
+
+### The Atmosfera Research Website
+The Atmosfera research website showcases our ongoing research in atmosphere-sea and land interactions. 
+
+Currently, we study the atmospheric exchanges above sea and freshwater bodies. We hope to measure the fluxes for many years to come so that we gain in-depth insights on the short-term and long-term atmospheric processes of these surfaces. We explore these interactions using theeddy covariance" method, a fast response open-path gas analyzer and anemometer system capable in measuring fluxes of moisture and carbon dioxide. To support the flux data, we measure weather parameters, such as solar radiation, temperature, relative humidity and wind so that we get a better understanding of the feedbacks and responses of the exchanges and its drivers.
+
+
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-The Atmosfera research website showcases our ongoing research in atmosphere-sea and land interactions. Currently, we study the atmospheric exchanges above sea and freshwater bodies. We hope to measure the fluxes for many years to come so that we gain in-depth insights on the short-term and long-term atmospheric processes of these surfaces. We explore these interactions using theeddy covariance" method, a fast response open-path gas analyzer and anemometer system capable in measuring fluxes of moisture and carbon dioxide. To support the flux data, we measure weather parameters, such as solar radiation, temperature, relative humidity and wind so that we get a better understanding of the feedbacks and responses of the exchanges and its drivers.
-
-The Github repo stores the codes we use in transferring the data on the local server to a cloud database on Amazon Web Services (AWS) servers. The data also can be downloaded using an API on the atmosfera.usm.my website.
-
 `yusriyp`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
