@@ -66,10 +66,6 @@ The Atmosfera research website showcases our ongoing research in atmosphere-sea 
 
 Currently, we study the atmospheric exchanges above sea and freshwater bodies. We hope to measure the fluxes for many years to come so that we gain in-depth insights on the short-term and long-term atmospheric processes of these surfaces. We explore these interactions using theeddy covariance" method, a fast response open-path gas analyzer and anemometer system capable in measuring fluxes of moisture and carbon dioxide. To support the flux data, we measure weather parameters, such as solar radiation, temperature, relative humidity and wind so that we get a better understanding of the feedbacks and responses of the exchanges and its drivers.
 
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-`yusriyp`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
@@ -235,10 +231,8 @@ Some of the sensors used are contributed by `Elite Scientific Instruments` <br /
 :fax:  +603 8945 7100 <br />
 :email: sales@esi.com.my <br />
 
-
-
-
-
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
+`yusriyp`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
