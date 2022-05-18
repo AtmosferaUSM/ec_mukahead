@@ -59,7 +59,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The Github repo stores instructions and codes we use in transferring the data on the local server to a cloud database on Amazon Web Services (AWS) servers. The data also can be downloaded using an API on the atmosfera.usm.my website.
+The Github repo stores instructions and codes we use in transferring the eddy covariance and Biomet data on the local server to a cloud database on Amazon Web Services (AWS) servers. The data also can be downloaded using an API on the atmosfera.usm.my website.
 
 ### The Atmosfera Research Website
 The Atmosfera research website showcases our ongoing research in atmosphere-sea and land interactions. 
